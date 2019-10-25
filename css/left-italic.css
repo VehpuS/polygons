@@ -1,0 +1,10 @@
+/*https://stackoverflow.com/questions/15348014/arabic-italic-font*/
+
+
+.rtl-italic {
+    transform: skewX(15deg);
+    -webkit-transform: skewX(15deg);
+    -moz-transform: skewX(15deg);
+    -o-transform: skewX(15deg);
+    -ms-transform: skewX(15deg);
+}
