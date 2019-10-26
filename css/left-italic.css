@@ -2,6 +2,7 @@
 
 
 .rtl-italic {
+    display:inline-block;
     transform: skewX(15deg);
     -webkit-transform: skewX(15deg);
     -moz-transform: skewX(15deg);
