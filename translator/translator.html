@@ -39,9 +39,9 @@
         }
 
         function tapeRect(ctx, x, y, w, h) {
-            // var pixels = ctx.getImageData(x, y, 1, 1).data,
-            //     color = "#" + hex(pixels[0]) + hex(pixels[1]) + hex(pixels[2]);
-            const color = "#cccccc"
+            var pixels = ctx.getImageData(x, y, 1, 1).data,
+                color = "#" + hex(pixels[0]) + hex(pixels[1]) + hex(pixels[2]);
+            // const color = "#cccccc"
             ctx.fillStyle = color;
             ctx.fillRect(x, y, w, h);
         }
@@ -61,10 +61,11 @@
 
             function draw(drawFunc) {
                 // add canvas after img
-                const img = images[drawFuncs.length],
-                    filename = img ? img.src.match(".*[^/]/(.*)$")[1] : "",
-                    canvas = document.createElement("canvas"),
-                    ctx = canvas.getContext("2d");
+                const img = images[drawFuncs.length];
+                const filename = img ? img.src.match(".*[^/]/(.*)$")[1] : "";
+                const canvas = document.createElement("canvas");
+                const ctx = canvas.getContext("2d");
+
                 canvas.onmouseenter = function () {
                     canvas.parentNode.replaceChild(img, canvas)
                 };
@@ -78,9 +79,6 @@
                     });
                 };
                 drawFuncs.push(function () {
-                    console.log({
-                        img
-                    })
                     if (img) {
                         canvas.width = img.naturalWidth;
                         canvas.height = img.naturalHeight;
@@ -106,8 +104,8 @@
             draw(function (ctx, img) {
                 ctx.drawImage(img, 0, 0);
                 for (var y = 100; y < 200; y += 80) tapeRect(ctx, 220, y, 340, 60);
-                putText(ctx, 246, 156, 50, "#aaa", "Alef-Latin-Hebrew", "Drag & Drop the");
-                putText(ctx, 250, 218, 44, "#aaa", "Alef-Latin-Hebrew", "Unhappy Polygons");
+                putText(ctx, 305, 156, 50, "#aaa", "Alef-Latin-Hebrew", "הזיזו את");
+                putText(ctx, 250, 218, 44, "#aaa", "Alef-Latin-Hebrew", "הצורות העצובות");
             })
             draw(function (ctx, img) {
                 ctx.drawImage(img, 0, 0);
