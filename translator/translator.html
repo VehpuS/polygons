@@ -62,7 +62,7 @@
             function draw(drawFunc) {
                 // add canvas after img
                 const img = images[drawFuncs.length];
-                const filename = img ? img.src.match(".*[^/]/(.*)$")[1] : "";
+                const filename = img ? img.src.match(".*[^/]/(.*?)(?:_blank)?$")[1] : "";
                 const canvas = document.createElement("canvas");
                 const ctx = canvas.getContext("2d");
 
@@ -110,20 +110,26 @@
             draw(function (ctx, img) {
                 ctx.drawImage(img, 0, 0);
                 for (var y = 6; y < 408; y += 52) tapeRect(ctx, 56, y, 133, 34);
-                for (var y = 38; y < 200; y += 52) putText(ctx, 58, y,
-                    42, "#fff", "Alef-Latin-Hebrew", "New Board");
-                for (var y = 245; y < 300; y += 52) putText(ctx, 58, y, 36, "#fff", "Alef-Latin-Hebrew",
-                    "Start Movin'");
-                for (var y = 350; y < 450; y += 52) putText(ctx, 58, y, 41, "#fff", "Alef-Latin-Hebrew",
-                    "Stop Movin'");
+                for (var y = 38; y < 200; y += 52) putText(ctx,
+                    58, y, 38, "#fff", "Alef-Latin-Hebrew", "לוח חדש");
+                for (var y = 245; y < 300; y += 52) putText(ctx, 58,
+                    y, 30, "#fff", "Alef-Latin-Hebrew", "יאללה לזוז");
+                for (var y = 350; y < 450; y += 52) putText(ctx, 58,
+                    y, 41, "#fff", "Alef-Latin-Hebrew", "די לזוז");
+            })
+            draw(function (ctx, img) {
+                ctx.drawImage(img, 0, 0);
+                for (var y = 6; y < 140; y += 60) tapeRect(ctx, 56, y, 160, 40);
+                for (var y = 38; y < 140; y += 60) putText(ctx, 70, y,
+                    38, "#fff", "Alef-Latin-Hebrew", "לוח חדש");
             })
             draw(function (ctx, img) {
                 ctx.drawImage(img, 0, 0);
                 tapeRect(ctx, 5, 164, 20, 105);
                 tapeRect(ctx, 30, 275, 40, 18);
-                putText(ctx, 35, 293, 20, "#666", "Alef-Latin-Hebrew", "Time");
+                putText(ctx, 40, 293, 20, "#666", "Alef-Latin-Hebrew", "זמן");
                 ctx.rotate(Math.PI / -2);
-                putText(ctx, -260, 22, 20, "#666", "Alef-Latin-Hebrew", "Segregation");
+                putText(ctx, -230, 20, 20, "#666", "Alef-Latin-Hebrew", "היפרדות");
             })
             // make download button
             var button = document.createElement("button");
@@ -149,7 +155,9 @@
 
     <img src="../play/mini/dragging.png"></img>
 
-    <img src="../play/img/ui_buttons.png"></img>
+    <img src="../play/img/ui_buttons_blank.png"></img>
+
+    <img src="../play/img/new_board.png"></img>
 
     <img src="../play/img/stats.png"></img>
 </body>
