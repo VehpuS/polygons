@@ -16,3 +16,5 @@ Show us how you're using and remixing Parable of the Polygons!
 Tweet us at
 [@vihartvihart](https://twitter.com/vihartvihart) and
 [@ncasenmare](https://twitter.com/ncasenmare).
+
+Read about the Hebrew translation here: https://www.inquisitivemuggles.com/code/2019/11/02/polygons.html
